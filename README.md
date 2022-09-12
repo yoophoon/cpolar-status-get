@@ -1,6 +1,7 @@
 # cpolar-status-get
 用于cpolar内网穿透后定时获取状态通过邮件发送自己
 
+# those are the origin author's
 ### 树莓派公网ssh远程访问家中树莓派  
 https://zhuanlan.zhihu.com/p/386691793
 
