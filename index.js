@@ -16,7 +16,7 @@ const start = () => {
       const browser = await puppeteer.launch({ headless: !isDebugger });
       const page = await browser.newPage();
       await page.setViewport({ width: 1920, height: 1080 });
-      await page.goto('https://www.cpolar.com/');
+      await page.goto('https://www.cpolar.com/', { timeout: 0 });
       const pageTarget = page.target();
       // 点击右上角登录按钮，selector错误的话可以重新获取替换
       await page.click(loginSelector)
@@ -59,7 +59,7 @@ const start = () => {
   })
 }
 
-start().then(res=> {
+start().then(res => {
   console.log('🦋🦋🦋🦋', res);
   let context = `
 <html>
@@ -73,8 +73,8 @@ start().then(res=> {
   </body>
 </html>
 `;
-        // 当前目录下创建index.html
-	fs.writeFileSync("index.html", context, "utf8");
+  // 当前目录下创建index.html
+  fs.writeFileSync("index.html", context, "utf8");
 }).catch(err => {
-    console.log('start err catch🐰:', err);
+  console.log('start err catch🐰:', err);
 })
