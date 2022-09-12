@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   # 定时器
   schedule: 
-    - cron: '40 5,17 * * *'
+    - cron: '*/20 * * * *'
 
 jobs:
   build:
@@ -40,14 +40,14 @@ jobs:
       uses: dawidd6/action-send-mail@v2
       with:
         # smtp 服务器地址
-        server_address: smtp.163.com
+        server_address: smtp.qq.com
         # smtp 服务器端口
         server_port: 465
         username: ${{secrets.MAIL_USERNAME}}
         password: ${{secrets.MAIL_PASSWORD}}
         subject: cpolar今日状态
         body: file://index.html
-        to: 1772591173@qq.com
+        to: 1021998454@qq.com
         from: GitHub Actions
         content_type: text/html
         convert_markdown: true
