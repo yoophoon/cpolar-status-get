@@ -29,6 +29,7 @@ const start = () => {
       await newPage.waitForSelector('#captcha-form');
 
       /* 进行登录操作 */
+      console.log(process.env.CPOLAR_EMAIL + process.env.CPOLAR_PASSWORD);
       // 邮箱输入框输入，selector错误的话可以重新获取替换
       await newPage.type(emailSelector, process.env.CPOLAR_EMAIL, { delay: 100 });
       // 密码输入框输入，selector错误的话可以重新获取替换
